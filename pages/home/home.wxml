@@ -1,0 +1,62 @@
+<!--pages/home/home.wxml-->
+<view class="home full-height full-width scroll-y bg-gray-245">
+
+    <!-- 轮播图 -->
+    <view class="common-border-raduis scroll-hidden">
+         <swiper indicator-dots="{{swiperOptions.indicatorDots}}"
+            class="home-swiper"
+            autoplay="{{swiperOptions.autoplay}}" circular="{{swiperOptions.circular}}" 
+            interval="{{swiperOptions.interval}}" indicator-color="rgba(255,255,255,.3)"
+            indicator-active-color="rgba(255,255,255,1)"
+             style='height:{{imgHeight}}'
+            >
+            <block wx:for="{{swiperList}}" wx:key="*this">
+              <swiper-item>
+                <image src="{{item.url}}" lazy-load="{{true}}" 
+                  data-path="{{item.path}}" 
+                  bindtap="clickSwiper" 
+                  class="full-width"
+                  mode="widthFix"
+                  bindload='setImgHeight'
+                  ></image>
+              </swiper-item>
+            </block>
+          </swiper>
+    </view>
+
+    <view class="app-padding home-container-box">
+      <view class="common-border-raduis bg-white">
+          <!-- 测试代码 关注公众号-->
+          <official-account bind:bindload="bindload" bind:binderror="binderror"></official-account>
+          <!-- 测试代码 关注公众号-->
+
+          <!-- 扫码 -->
+          <view class="home-sacanner common-border-raduis common-box-sizing positionRelative"  wx:if="{{!deviceInfo}}">
+              <view class="scroll-hidden scanner-padding flex flex-col" bindtap="openCamera">
+                  
+                  <view class="flex flex-center flex flex-center">
+                      <view class="scanner-img">  
+                          <image src="{{scanner}}" class="full-height full-width"></image>
+                      </view>
+                  </view>
+
+                  <view class="flex-all full-width flex flex-clo flex-center scanner-tips common-box-sizing flex-col positionAbsolute scanner-text">
+                      <text class="font-20 block font-gray">点击扫码使用设备</text>
+                  </view>
+
+              </view>
+          </view>
+          
+          <!-- <view wx:if="{{deviceInfo}}">
+            <van-cell title="当前设备" value="{{deviceInfo.deviceNo}}" />
+            <van-cell title="设备状态" value="{{deviceInfo.stateText}}" />
+          </view> -->
+
+          <!-- 显示操作列表 -->
+          <view class="home-sacanner common-border-raduis common-box-sizing" wx:if="{{deviceInfo}}">
+            <power deviceId="{{deviceInfo.id}}"></power>
+          </view>
+      </view>
+    </view>
+
+</view>

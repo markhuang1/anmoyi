@@ -1,0 +1,17 @@
+<!--compontents/cell/cell.wxml-->
+<button class="cell-button full-width" size="default" style="width:100%" open-type="{{openType}}" bindgetphonenumber="getPhoneNumber">
+  <view class="cell-item flex" bindtap="updateClick">
+    <!-- 左侧图标 -->
+    <view class="cell-item-img full-height">
+      <image src="{{leftImg}}" class="full-height full-width"></image>
+    </view>
+    <!-- 中间内容 -->
+    <view class="flex-all full-height flex flex-star cell-item-title font-gray font-16">
+      <text>{{title}}</text>
+    </view>
+    <!-- 右侧箭头 -->
+    <view class="cell-item-img full-height" wx:if="islink">
+      <image src="{{rightImg}}" class="full-height full-width"></image>
+    </view>
+  </view>
+</button>

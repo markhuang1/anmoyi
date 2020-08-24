@@ -1,0 +1,62 @@
+/* compontents/power/power.wxss */
+@import "../../common/css/common.wxss";
+.power-circle{
+  border-bottom:1px dotted rgba(47,198,204,1);
+  width: 120rpx;
+  height: 120rpx;
+}
+.power-circle-container{
+  padding: 10rpx 0 30rpx 0;
+}
+.power-button{
+  padding: 30rpx 0;
+  padding-top: 49rpx;
+}
+.power-button-item{
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+}
+.power-button-item button{
+  width: 100%;
+  font-size: 14px;
+  padding: 8px 15px;
+}
+.cbooseHandelType{
+  background-color: white;
+  color: #11CD6E;
+}
+.device-info{
+  padding: 10rpx;
+  padding-top:30rpx;
+}
+.update-order{
+  margin-bottom: 20rpx;
+}
+.am{
+  width:130rpx;
+  height:130rpx;
+  padding-top: 10rpx
+}
+.am-title{
+  padding: 10rpx;
+}
+.power-list-item{
+  width: calc((100% - 30rpx) / 3);
+  margin-right: 15rpx;
+}
+.power-button-item-nomargin{
+  margin-right: 0;
+}
+.power-button-item-price{
+  transform: translateX(-2px);
+  padding-top: 2px;
+}
+.power-button-item-main{
+  z-index: 2;
+}
+.power-button-item-img{
+  z-index: 1;
+  right: 4px;
+  bottom: 0;
+  height: 62%;
+}

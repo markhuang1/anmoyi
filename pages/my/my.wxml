@@ -1,0 +1,30 @@
+<!--index.wxml-->
+<view class=" common-box-sizing bg-white">
+
+  <image src="../../icon/个人中心背景.png" class="full-width" mode="widthFix"></image>
+
+  <view class="my-container">
+    <view class="userinfo">
+      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">一键登录</button>
+      <block wx:else>
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <text class="userinfo-nickname padding-line-height font-weight-bold letter-speac-2">{{userInfo.nickName}}</text>
+      </block>
+    </view>
+    
+    <!-- 操作列表 -->
+
+    <view class="common-border-raduis scroll-hidden common-box-sizing full-width my-handel-container">
+        <view class="my-handel-item full-width" wx:for="{{list}}" wx:key="index">
+          <van-cell custom-class="" bind:click = "clickCell" title="{{item.title}}" is-link>
+            <view slot="icon">
+                <view class="{{item.icon}} my-icon" style="color:{{item.color}}"></view>
+            </view>
+          </van-cell>
+          <!-- <cell bind:clickEvent = "clickCell" data-value="66" title="{{item.title}}" openType="{{item.openType}}" bind:getPhoneNumber="getPhoneNumber" left-img="{{item.leftImg}}"></cell> -->
+        </view>
+
+    </view>
+  </view>
+
+</view>

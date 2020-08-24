@@ -1,0 +1,63 @@
+<!--compontents/power/power.wxml-->
+<view>
+
+  <!-- 圆形按钮 -->
+  <view class="flex flex-around border-bottom power-circle-container">
+
+      <view class="flex flex-col flex-center">
+        <image src="../../icon/按摩-点击.png" class="am"></image>
+        <text class="am-title font-main-color font-14 font-weight-500">按摩</text>
+      </view> 
+
+      <!-- <button style="width:130rpx;height:130rpx;padding:0" class="font-14 font-gray circle power-circle flex flex-center {{handelType == 1 ?'cbooseHandelType':''}}" data-index="1" bindtap="setHandelType" hover-class="bg-white">
+        充电
+      </button> -->
+
+  </view>
+
+  <!-- button列表区域 -->
+  <view class="power-button">
+    
+    <view class="flex flex-warp">
+        <view wx:for="{{list}}" wx:key="index" class="power-list-item  {{(index + 1) % 3 == 0 ? 'power-button-item-nomargin':''}}">
+          <view class=" power-button-item  common-box-sizing bg-gray-247 common-border-raduis positionRelative" bindtap="setChooseOption">
+            <view data-index="{{index}}" class="flex flex-col power-button-item-main">
+              <view class="full-width font-weight-bold font-14 font-sc">{{item.orderTime}}20分钟</view>
+              <view class="full-width font-weight-bold font-12 font-red font-sc power-button-item-price">￥4{{item.orderPrice}} </view>
+            </view>
+            <image src="../../icon/按摩默认状态.png" class="positionAbsolute power-button-item-img" mode="heightFix"></image>
+          </view>
+        </view>
+    </view>
+
+  </view>
+
+  <!-- 提交订单 -->
+  <!-- <view class="update-order">
+    <van-button round type="primary" loading-text="加载中..." color="#1AAD19" size="large" loading-type="spinner" loading="{{loadingOrder}}" bind:click="setOrder">确认下单</van-button>
+  </view> -->
+
+
+  <!-- 设备运行信息 -->
+  <view class="device-info">
+      <view class="padding-line-height">
+        <text class="font-14 font-weight-bold font-color-51">设备运行中(可重复购买，与上次叠加)</text>
+      </view>
+      
+      <view class="flex flex-between font-16">
+          <view class="flex flex-start">
+            <text class="font-weight-500 font-gray-102">按摩椅: </text>
+            <van-count-down use-slot time="{{ countDownObj.chargeOrderListTime }}" bind:change="onChange" format="mm:ss">
+              <text class="item font-main-color">{{ timeData.minutes }}</text>
+              <text class="item font-main-color">{{ timeData.seconds }}</text>
+            </van-count-down>
+          </view>
+          <!-- <view class="flex flex-end">
+            <text>充电线: </text>
+            <van-count-down time="{{ countDownObj.massageOrderListTime }}" />
+          </view> -->
+      </view>
+
+  </view>
+
+</view>

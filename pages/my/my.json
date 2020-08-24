@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "cell":"../../compontents/cell/cell",
+    "van-cell": "@vant/weapp/cell/index"
+  },
+  "navigationBarTitleText": "我的"
+}
