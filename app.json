@@ -2,19 +2,20 @@
   "pages": [
     "pages/login/login",
     "pages/home/home",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/order/order"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "SC",
-    "navigationBarTextStyle": "black",
+    "navigationBarTextStyle": "white",
     "navigationStyle": "custom"
   },
   "tabBar": {
-    "color": "#a9b7b7",
-    "selectedColor": "#11cd6e",
-    "borderStyle": "black",
+    "color": "#4F4F4F",
+    "selectedColor": "#2FC6CC",
+    "borderStyle": "white",
     "list": [
       {
         "selectedIconPath": "img/home-select.png",

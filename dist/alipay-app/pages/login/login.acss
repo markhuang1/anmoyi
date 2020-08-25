@@ -1,0 +1,5 @@
+/* pages/login/login.wxss */
+
+.login-tips {
+    padding: 10rpx;
+}

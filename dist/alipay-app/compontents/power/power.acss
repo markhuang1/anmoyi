@@ -1,0 +1,89 @@
+.power-power {
+    height: inherit;
+}
+/* compontents/power/power.wxss */
+
+@import "../../common/css/common.acss";
+
+.power-power .power-circle {
+    border-bottom: 1px dotted rgba(47, 198, 204, 1);
+    width: 120rpx;
+    height: 120rpx;
+}
+
+.power-power .power-circle-container {
+    padding: 10rpx 0 30rpx 0;
+}
+
+.power-power .power-button {
+    padding: 30rpx 0;
+    padding-top: 49rpx;
+    padding-bottom: 0rpx;
+}
+
+.power-power .power-button-item {
+    margin-bottom: 20rpx;
+    padding: 20rpx;
+}
+
+.power-power .power-button-item button {
+    width: 100%;
+    font-size: 14px;
+    padding: 8px 15px;
+}
+
+.power-power .cbooseHandelType {
+    background-color: white;
+    color: #11cd6e;
+}
+
+.power-power .device-info {
+    padding: 10rpx;
+}
+
+.power-power .update-order {
+    margin-bottom: 20rpx;
+}
+
+.power-power .am {
+    width: 130rpx;
+    height: 130rpx;
+    padding-top: 10rpx;
+}
+
+.power-power .am-title {
+    padding: 10rpx;
+}
+
+.power-power .power-list-item {
+    width: calc((100% - 30rpx) / 3);
+    margin-right: 15rpx;
+}
+
+.power-power .power-button-item-nomargin {
+    margin-right: 0;
+}
+
+.power-power .power-button-item-price {
+    transform: translateX(-2px);
+    padding-top: 2px;
+}
+
+.power-power .power-button-item-main {
+    z-index: 2;
+}
+
+.power-power .power-button-item-img {
+    z-index: 1;
+    right: 4px;
+    bottom: 0;
+    height: 62%;
+}
+
+.power-power .amy-time {
+    margin-right: 5px;
+}
+
+.power-power .time-item {
+    line-height: 22px;
+}

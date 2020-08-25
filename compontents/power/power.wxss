@@ -11,6 +11,7 @@
 .power-button{
   padding: 30rpx 0;
   padding-top: 49rpx;
+  padding-bottom: 0rpx;
 }
 .power-button-item{
   margin-bottom: 20rpx;
@@ -27,7 +28,6 @@
 }
 .device-info{
   padding: 10rpx;
-  padding-top:30rpx;
 }
 .update-order{
   margin-bottom: 20rpx;
@@ -59,4 +59,10 @@
   right: 4px;
   bottom: 0;
   height: 62%;
+}
+.amy-time{
+  margin-right: 5px;
+}
+.time-item{
+  line-height: 22px;
 }

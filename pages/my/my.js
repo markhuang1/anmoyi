@@ -1,8 +1,9 @@
 //my.js
 let list = [
-  {leftImg:"../../img/home.png",title:'我的积分30',icon:'iconfont iconjifen',color:"#FDB61C"},
-  {leftImg:"../../img/scanner.png",title:"18080767527",openType:'getPhoneNumber',icon:"iconfont iconmobile1",color:"#1CC0FD"},
-  {leftImg:"../../img/my.png",title:"平台须知",icon:"iconfont iconpingtai",color:"#DD5B3E"},
+  {leftImg:"../../img/home.png",title:'我的积分30',icon:'iconfont iconjifen',color:"#FDB61C",size:"24",deviation:0,path:''},
+  {leftImg:"../../img/scanner.png",title:"18080767527",openType:'getPhoneNumber',icon:"iconfont iconmobile1",color:"#1cc0fd",size:"24",deviation:0,path:''},
+  {leftImg:"../../img/my.png",title:"平台须知",icon:"iconfont iconpingtai",color:"#fd561c",size:"18",deviation:4,path:''},
+  {leftImg:"../../img/my.png",title:"我的订单",icon:"iconfont icondingdan",color:"#2fcccc",size:"24",deviation:0,path:'order'},
 ]
 //获取应用实例
 const app = getApp()
@@ -54,14 +55,20 @@ Page({
   },
   getUserInfo: function(e) {
     app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
+    if(e.detail && e.detail.userInfo){
+      this.setData({
+        userInfo: e.detail.userInfo,
+        hasUserInfo: true
+      })
+    }
   },
   clickCell(event){
     let data = event.currentTarget.dataset
-    console.log(data)
+    if(data && data.path){
+      wx.navigateTo({
+        url: '/pages/'+data.path+'/'+data.path
+      })
+    }
   },
   getPhoneNumber (e) {
     console.log(e.detail.errMsg)

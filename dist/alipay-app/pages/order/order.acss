@@ -1,0 +1,10 @@
+/* pages/order/order.wxss */
+
+.order-item {
+    margin-bottom: 35rpx;
+    padding: 20rpx;
+}
+
+.order-item-detail-left {
+    margin-right: 5px;
+}

@@ -1,0 +1,19 @@
+@import "/__antmove/static/app.acss";
+/**app.wxss**/
+
+@import "./common/css/common.acss";
+page {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 20rpx 30rpx;
+}

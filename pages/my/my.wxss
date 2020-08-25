@@ -15,7 +15,7 @@
 }
 .my-container{
   padding: 0 25rpx;
-  margin-top: -135rpx;
+  margin-top: -160rpx;
 }
 .userinfo-nickname {
   color: #666666;
@@ -37,5 +37,4 @@
 }
 .my-icon{
   margin-right: 10px;
-  font-size:24px
 }

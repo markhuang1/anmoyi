@@ -27,7 +27,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    list:list,
+    list:[],
     chooseOption:0,//选择的套餐
     handelType:0,//0按摩,1:充电
     loadingOrder:false,

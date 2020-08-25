@@ -1,0 +1,39 @@
+/* pages/home/home.wxss */
+
+.home-sacanner {
+    padding: 20rpx 30rpx;
+    margin-top: 50rpx;
+}
+
+.scanner-padding {
+    padding: 20rpx 10rpx;
+    padding-top: 0;
+}
+
+.scanner-img {
+    width: 250rpx;
+    height: 250rpx;
+    margin-bottom: 50rpx;
+}
+
+.scanner-tips {
+    padding: 10rpx;
+}
+
+.home-swiper .wx-swiper-dot {
+    width: 20rpx;
+    display: inline-flex;
+    height: 6rpx;
+    border-radius: 40rpx;
+    justify-content: space-between;
+    margin-bottom: 100rpx;
+}
+
+.home-container-box {
+    transform: translateY(-190rpx);
+}
+
+.scanner-text {
+    left: 0;
+    bottom: 35rpx;
+}

@@ -1,0 +1,6 @@
+<view class='grid-index {{className}}' ref='saveChildRef0'>
+  <view class="van-grid {{customClass}} {{ border && !gutter ? 'van-hairline--top' : '' }}" style='{{ viewStyle }}'>
+    <slot>
+    </slot>
+  </view>
+</view>

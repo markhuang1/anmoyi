@@ -5,9 +5,7 @@
 }
 .scanner-padding{
   padding: 20rpx 10rpx;
-}
-.home-sacanner{
-  
+  padding-top: 0;
 }
 .scanner-img{
   width: 250rpx;
@@ -30,5 +28,5 @@
 }
 .scanner-text{
   left: 0;
-  bottom: 30rpx;
+  bottom: 35rpx;
 }

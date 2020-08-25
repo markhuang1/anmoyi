@@ -1,0 +1,6 @@
+<view class='sidebar-index {{className}}' ref='saveChildRef0'>
+  <view class='van-sidebar {{customClass}}'>
+    <slot>
+    </slot>
+  </view>
+</view>

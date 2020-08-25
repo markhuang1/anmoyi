@@ -1,0 +1,16 @@
+<view class='swipe-cell-index {{className}}' ref='saveChildRef0'>
+  <view class='van-swipe-cell' data-key='cell' capture-bind:touchmove='onDrag' catchTap='antmoveAction' data-antmove-tap='onClick' onTouchStart='antmoveAction' data-antmove-touchstart='startDrag' catchTouchMove='antmoveAction' data-antmove-touchmove="{{ catchMove ? 'noop' : '' }}" onTouchEnd='antmoveAction' data-antmove-touchend='endDrag' onTouchCancel='antmoveAction' data-antmove-touchcancel='endDrag'>
+    <view style='{{ wrapperStyle }}'>
+      <view a:if='{{ leftWidth }}' class='van-swipe-cell__left' data-key='left' catchTap='antmoveAction' data-antmove-tap='onClick'>
+        <slot name='left'>
+        </slot>
+      </view>
+      <slot>
+      </slot>
+      <view a:if='{{ rightWidth }}' class='van-swipe-cell__right' data-key='right' catchTap='antmoveAction' data-antmove-tap='onClick'>
+        <slot name='right'>
+        </slot>
+      </view>
+    </view>
+  </view>
+</view>

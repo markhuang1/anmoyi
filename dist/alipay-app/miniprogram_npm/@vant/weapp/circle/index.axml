@@ -1,0 +1,15 @@
+<view class='circle-index {{className}}' ref='saveChildRef0'>
+  <import-sjs from='../wxs/utils.sjs' name='utils'>
+  </import-sjs>
+  <view class='van-circle'>
+    <canvas class='van-circle__canvas' style='width: {{ utils.addUnit(size) }};height:{{ utils.addUnit(size) }}' id='van-circle'>
+    </canvas>
+    <view a:if='{{ !text }}' class='van-circle__text'>
+      <slot>
+      </slot>
+    </view>
+    <cover-view a:else  class='van-circle__text'>
+      {{ text }}
+    </cover-view>
+  </view>
+</view>

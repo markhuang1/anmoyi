@@ -1,0 +1,8 @@
+{
+	"usingComponents": {
+		"cell": "../../compontents/cell/cell",
+		"van-cell": "/@vant/weapp/cell/index",
+		"btn": "/__antmove/component/btn/btn"
+	},
+	"defaultTitle": "我的"
+}

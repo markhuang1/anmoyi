@@ -22,14 +22,14 @@ App({
           //发起网络请求
 
           // 测试代码
-          this.globalData.loginState = 'success'
-              if(this.loginCallback){
-                this.loginCallback()
-              }
-              else{
-                this.closeLoading()
-              }
-              return
+          // this.globalData.loginState = 'success'
+          //     if(this.loginCallback){
+          //       this.loginCallback()
+          //     }
+          //     else{
+          //       this.closeLoading()
+          //     }
+          //     return
 
           request('url','GET',{code:res.code})
           .then(res=>{

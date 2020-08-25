@@ -1,0 +1,30 @@
+<!--pages/order/order.wxml-->
+<view class="full-height scroll-y app-padding bg-gray-245">
+  
+  <view class="order-item common-border-raduis bg-white" wx:for="{{list}}" wx:key="index">
+
+      <!-- 列表头部 -->
+      <view class="flex flex-between font-14">
+        <view class="order-item-title font-weight-bold font-gray-102">{{item.payTime}}</view>
+        <view class="order-item-status" style="color:{{item.color}}">{{item.status == 1?'失败':'成功'}}</view>
+      </view>
+      
+      <!-- 详细信息 -->
+      <!-- <view class="order-item-detail font-14">
+        <text class="order-item-detail-left">支付时间：</text>
+        <text class="order-item-detail-right">{{item.payTime}}</text>
+      </view> -->
+
+      <view class="order-item-detail font-14">
+        <text class="order-item-detail-left">支付金额：</text>
+        <text class="order-item-detail-right font-red">￥{{item.sum}}</text>
+      </view>
+
+      <view class="order-item-detail font-14">
+        <text class="order-item-detail-left">使用时长：</text>
+        <text class="order-item-detail-right">{{item.useTime}}分钟</text>
+      </view>
+
+  </view>
+
+</view>

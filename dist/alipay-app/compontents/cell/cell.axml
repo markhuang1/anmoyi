@@ -1,0 +1,17 @@
+<view class='cell-cell {{className}}' ref='saveChildRef0'>
+  <btn class='cell-button full-width default-style' size='default' style='width:100%' open-type='{{openType}}' onGetAuthorize='getPhoneNumber' scope='phoneNumber'>
+    <view class='cell-item flex' onTap='antmoveAction' data-antmove-tap='updateClick'>
+      <view class='cell-item-img full-height'>
+        <image src='{{leftImg}}' class='full-height full-width'>
+        </image>
+      </view>
+      <view class='flex-all full-height flex flex-star cell-item-title font-gray font-16'>
+        <text>
+          {{title}}        </text>
+      </view>      <view class='cell-item-img full-height' a:if='islink'>
+        <image src='{{rightImg}}' class='full-height full-width'>
+        </image>
+      </view>
+    </view>
+  </btn>
+</view>
