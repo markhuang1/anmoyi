@@ -1,4 +1,4 @@
-const baseURL = 'https://share.100bm.cn/'
+const baseURL = 'https://share.100bm.cn/api/'
 export function request(url,method,data = {}){
   url = baseURL + url
   return new Promise((resolve,reject) => {

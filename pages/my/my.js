@@ -48,7 +48,7 @@ Page({
               userInfo: res.userInfo,
               hasUserInfo: true
             })
-            this.toIndexPage()
+            // this.toIndexPage()
         }
       })
     }
