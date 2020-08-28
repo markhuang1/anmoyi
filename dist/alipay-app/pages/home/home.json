@@ -1,6 +1,0 @@
-{
-	"usingComponents": {
-		"power": "../../compontents/power/power",
-		"van-cell": "/@vant/weapp/cell/index"
-	}
-}

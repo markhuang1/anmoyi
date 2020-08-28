@@ -2,9 +2,9 @@
 <view class="home full-height full-width scroll-y bg-gray-245">
 
     <!-- 轮播图 -->
-    <view class="common-border-raduis scroll-hidden">
+    <view class="scroll-hidden">
          <swiper indicator-dots="{{swiperOptions.indicatorDots}}"
-            class="home-swiper"
+            class="home-swiper scroll-hidden"
             autoplay="{{swiperOptions.autoplay}}" circular="{{swiperOptions.circular}}" 
             interval="{{swiperOptions.interval}}" indicator-color="rgba(255,255,255,.3)"
             indicator-active-color="rgba(255,255,255,1)"
@@ -24,39 +24,45 @@
           </swiper>
     </view>
 
-    <view class="app-padding home-container-box">
-      <view class="common-border-raduis bg-white">
-          <!-- 测试代码 关注公众号-->
-          <official-account bind:bindload="bindload" bind:binderror="binderror"></official-account>
-          <!-- 测试代码 关注公众号-->
+   <view class="home-main-box  bg-gray-245 positionRelative">
+       <view class="app-padding home-container-box">
+          <view class="common-border-raduis bg-white  home-relax scroll-hidden">
+              <!-- 测试代码 关注公众号-->
+              <official-account bind:bindload="bindload" bind:binderror="binderror"></official-account>
+              <!-- 测试代码 关注公众号-->
+              <!-- 舒服一下 -->
+                  <view class=" common-border-raduis common-box-sizing positionRelative">
+                    <image src="../../icon/bg.png" class="full-width" mode="widthFix"></image>
+                  </view>
+              <!-- 扫码 -->
+              <view class="common-border-raduis common-box-sizing positionRelative"  wx:if="{{!deviceInfo}}">
 
-          <!-- 扫码 -->
-          <view class="home-sacanner common-border-raduis common-box-sizing positionRelative"  wx:if="{{!deviceInfo}}">
-              <view class="scroll-hidden scanner-padding flex flex-col" bindtap="openCamera">
-                  
-                  <view class="flex flex-center flex flex-center">
-                      <view class="scanner-img">  
-                          <image src="{{scanner}}" class="full-height full-width"></image>
+                  <view class="scroll-hidden scanner-padding flex flex-col" bindtap="openCamera">
+                      
+                      <view class="flex flex-center" style="padding-bottom:20rpx;">
+                          <view class="scanner-img">  
+                              <image src="{{scanner}}" class="full-height full-width"></image>
+                          </view>
                       </view>
-                  </view>
 
-                  <view class="flex-all full-width flex flex-clo flex-center scanner-tips common-box-sizing flex-col positionAbsolute scanner-text">
-                      <text class="font-20 block font-gray">点击扫码使用设备</text>
-                  </view>
+                      <view class="flex-all full-width flex flex-clo flex-center scanner-tips common-box-sizing flex-col positionAbsolute scanner-text">
+                          <text class="font-20 block font-gray">点击扫 码使用设备</text>
+                      </view>
 
+                  </view>
+              </view>
+              
+              <!-- <view wx:if="{{deviceInfo}}">
+                <van-cell title="当前设备" value="{{deviceInfo.deviceNo}}" />
+                <van-cell title="设备状态" value="{{deviceInfo.stateText}}" />
+              </view> -->
+
+              <!-- 显示操作列表 -->
+              <view class="home-sacanner common-border-raduis common-box-sizing" wx:if="{{deviceInfo}}">
+                <power deviceId="{{deviceInfo.id}}"></power>
               </view>
           </view>
-          
-          <!-- <view wx:if="{{deviceInfo}}">
-            <van-cell title="当前设备" value="{{deviceInfo.deviceNo}}" />
-            <van-cell title="设备状态" value="{{deviceInfo.stateText}}" />
-          </view> -->
-
-          <!-- 显示操作列表 -->
-          <view class="home-sacanner common-border-raduis common-box-sizing" wx:if="{{deviceInfo}}">
-            <power deviceId="{{deviceInfo.id}}"></power>
-          </view>
-      </view>
-    </view>
+        </view>
+   </view>
 
 </view>

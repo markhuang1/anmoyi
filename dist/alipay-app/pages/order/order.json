@@ -1,6 +1,0 @@
-{
-	"usingComponents": { "van-button": "/@vant/weapp/button/index" },
-	"navigationStyle": "default",
-	"navigationBarTextStyle": "black",
-	"defaultTitle": "我的订单"
-}

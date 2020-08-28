@@ -36,7 +36,8 @@ Component({
       chargeOrderListTime:0,//按摩时间
       massageOrderListTime:0,//充电时间
     },
-    timeData: {}
+    timeData: {},
+    circleValue:0
   },
   lifetimes: {
     attached: function() {
@@ -157,8 +158,12 @@ Component({
       })
     },
     onChange(e) {//倒计时
+      let value = e.detail
+      let second = value.hours * 60 * 60 + value.minutes * 60 + value.seconds 
+     let  circleValue = this.data.countDownObj.chargeOrderListTime ? ((this.data.countDownObj.chargeOrderListTime - second *1000) / this.data.countDownObj.chargeOrderListTime):0
       this.setData({
         timeData: e.detail,
+        circleValue:circleValue*100
       });
     },
   }

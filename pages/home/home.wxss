@@ -1,7 +1,6 @@
 /* pages/home/home.wxss */
 .home-sacanner{
-  padding: 20rpx 30rpx;
-  margin-top: 50rpx;
+  padding: 26rpx 30rpx;
 }
 .scanner-padding{
   padding: 20rpx 10rpx;
@@ -10,7 +9,7 @@
 .scanner-img{
   width: 250rpx;
   height: 250rpx;
-  margin-bottom: 50rpx;
+  margin-bottom: 60rpx;
 }
 .scanner-tips{
   padding: 10rpx;
@@ -21,12 +20,31 @@
   height: 6rpx;
   border-radius: 40rpx;
   justify-content:space-between;
-  margin-bottom: 100rpx;
+  margin-bottom: 70rpx;
 }
 .home-container-box{
-  transform: translateY(-190rpx);
+  /* transform: translateY(-140rpx); */
+  padding:30rpx
+}
+.home-relax{
+  border-top-right-radius: 60rpx !important;
 }
 .scanner-text{
   left: 0;
   bottom: 35rpx;
+}
+.home-swiper{
+  /* border-radius: 0 0 0 250rpx; */
+}
+.home-main-box{
+  border-radius: 0 51rpx 0 0;
+  transform: translateY(-75rpx);
+}
+.home-main-box::before {
+  content: '';
+  position: absolute;
+  top: -60rpx;
+  width: 60rpx;
+  height: 60rpx;
+  background-image: radial-gradient(60rpx at 60rpx 0, rgba(245,245,245,0) 59rpx,#F5F5F5 61rpx);
 }

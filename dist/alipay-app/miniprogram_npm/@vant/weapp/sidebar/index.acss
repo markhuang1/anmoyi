@@ -1,9 +1,0 @@
-.sidebar-index {
-    height: inherit;
-}
-@import "../common/index.acss";
-
-.sidebar-index .van-sidebar {
-    width: 85px;
-    width: var(--sidebar-width, 85px);
-}
