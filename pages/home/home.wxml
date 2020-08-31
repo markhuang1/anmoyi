@@ -9,6 +9,27 @@
             interval="{{swiperOptions.interval}}" indicator-color="rgba(255,255,255,.3)"
             indicator-active-color="rgba(255,255,255,1)"
              style='height:{{imgHeight}}'
+             hidden="{{deviceInfo}}"
+            >
+            <block wx:for="{{swiperList2}}" wx:key="*this">
+              <swiper-item>
+                <image src="{{item.url}}" lazy-load="{{true}}" 
+                  data-path="{{item.path}}" 
+                  bindtap="clickSwiper" 
+                  class="full-width"
+                  mode="widthFix"
+                  bindload='setImgHeight'
+                  ></image>
+              </swiper-item>
+            </block>
+          </swiper>
+          <swiper indicator-dots="{{swiperOptions.indicatorDots}}"
+            class="home-swiper scroll-hidden"
+            autoplay="{{swiperOptions.autoplay}}" circular="{{swiperOptions.circular}}" 
+            interval="{{swiperOptions.interval}}" indicator-color="rgba(255,255,255,.3)"
+            indicator-active-color="rgba(255,255,255,1)"
+             style='height:{{imgHeight}}'
+             hidden="{{!deviceInfo}}"
             >
             <block wx:for="{{swiperList}}" wx:key="*this">
               <swiper-item>
@@ -24,14 +45,14 @@
           </swiper>
     </view>
 
-   <view class="home-main-box  bg-gray-245 positionRelative">
-       <view class="app-padding home-container-box">
-          <view class="common-border-raduis bg-white  home-relax scroll-hidden">
+   <view class="bg-gray-245 positionRelative {{deviceInfo?'home-main-box':'home-main-box-noscanner'}}">
+       <view class="app-padding home-container-box  {{!deviceInfo?'home-nocannner-transition':''}}">
+          <view class="common-border-raduis bg-white  scroll-hidden {{deviceInfo?'home-relax':''}}">
               <!-- 测试代码 关注公众号-->
               <official-account bind:bindload="bindload" bind:binderror="binderror"></official-account>
               <!-- 测试代码 关注公众号-->
               <!-- 舒服一下 -->
-                  <view class=" common-border-raduis common-box-sizing positionRelative">
+                  <view class=" common-border-raduis common-box-sizing positionRelative" wx:if="{{deviceInfo}}">
                     <image src="../../icon/bg.png" class="full-width" mode="widthFix"></image>
                   </view>
               <!-- 扫码 -->
@@ -46,7 +67,7 @@
                       </view>
 
                       <view class="flex-all full-width flex flex-clo flex-center scanner-tips common-box-sizing flex-col positionAbsolute scanner-text">
-                          <text class="font-20 block font-gray">点击扫 码使用设备</text>
+                          <text class="font-20 block font-gray">点我扫码</text>
                       </view>
 
                   </view>

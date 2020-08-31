@@ -15,7 +15,8 @@
 }
 .power-button-item{
   margin-bottom: 20rpx;
-  padding: 20rpx;
+  padding: 30rpx 20rpx;
+  background-color: #ECF9F9 !important;
 }
 .power-button-item button{
   width: 100%;
@@ -52,6 +53,7 @@
 .power-button-item-price{
   transform: translateX(-2px);
   padding-top: 2px;
+  color: #F64307;
 }
 .power-button-item-main{
   z-index: 2;
@@ -60,7 +62,7 @@
   z-index: 1;
   right: 4px;
   bottom: 0;
-  height: 62%;
+  height: 50%;
 }
 .amy-time{
   margin-right: 5px;

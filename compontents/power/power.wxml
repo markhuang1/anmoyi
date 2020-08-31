@@ -22,10 +22,10 @@
         <view wx:for="{{list}}" wx:key="index" class="power-list-item  {{(index + 1) % 3 == 0 ? 'power-button-item-nomargin':''}}">
           <view class=" power-button-item  common-box-sizing bg-gray-247 common-border-raduis positionRelative" data-index="{{index}}" bindtap="setChooseOption">
             <view class="flex flex-col power-button-item-main">
-              <view class="full-width font-weight-bold font-14 font-sc">{{item.orderTime}}分钟</view>
-              <view class="full-width font-weight-bold font-12 font-red font-sc power-button-item-price">￥{{item.orderPrice}} </view>
+              <view class="full-width font-weight-bold font-16 font-sc font-center">{{item.orderTime}}分钟</view>
+              <view class="full-width font-weight-bold font-12 font-sc power-button-item-price font-center">￥{{item.orderPrice}} </view>
             </view>
-            <image src="../../icon/按摩默认状态.png" class="positionAbsolute power-button-item-img" mode="heightFix"></image>
+            <!-- <image src="../../icon/按摩默认状态.png" class="positionAbsolute power-button-item-img" mode="heightFix"></image> -->
           </view>
         </view>
     </view>
@@ -48,7 +48,7 @@
               color="#30C6CC"
               layer-color="rgba(48,198,204,.3)"
               stroke-width="4"
-              size="80"
+              size="90"
               speed="0"
             >
               <van-count-down use-slot time="{{ countDownObj.chargeOrderListTime }}" bind:change="onChange" format="mm:ss">

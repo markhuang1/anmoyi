@@ -99,6 +99,9 @@
 .common-box-sizing{
   box-sizing: border-box;
 }
+.font-center{
+  text-align: center;
+}
 .font-12{
   font-size: 12px;
 }

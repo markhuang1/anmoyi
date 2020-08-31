@@ -20,6 +20,20 @@ let swiperList = [
     path:'/3'
   }
 ]
+let swiperList2 = [
+  {
+    url:'../../icon/banner1.png',
+    path:'/1'
+  },
+  {
+    url:'../../icon/banner1.png',
+    path:'/2'
+  },
+  {
+    url:'../../icon/banner1.png',
+    path:'/3'
+  }
+]
 
 Page({
 
@@ -29,6 +43,7 @@ Page({
   data: {
     swiperOptions:options,
     swiperList,
+    swiperList2,
     scanner:'../../icon/scanner.png',
     hiddenScanner:false,
     deviceList:[],//价格配置列表

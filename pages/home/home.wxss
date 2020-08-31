@@ -1,6 +1,6 @@
 /* pages/home/home.wxss */
 .home-sacanner{
-  padding: 26rpx 30rpx;
+  padding: 26rpx 15rpx;
 }
 .scanner-padding{
   padding: 20rpx 10rpx;
@@ -9,7 +9,8 @@
 .scanner-img{
   width: 250rpx;
   height: 250rpx;
-  margin-bottom: 60rpx;
+  margin-bottom: 45rpx;
+  margin-top: 20rpx;
 }
 .scanner-tips{
   padding: 10rpx;
@@ -24,14 +25,14 @@
 }
 .home-container-box{
   /* transform: translateY(-140rpx); */
-  padding:30rpx
+  padding:20rpx
 }
 .home-relax{
-  border-top-right-radius: 60rpx !important;
+  border-top-right-radius: 35rpx !important;
 }
 .scanner-text{
   left: 0;
-  bottom: 35rpx;
+  bottom: 45rpx;
 }
 .home-swiper{
   /* border-radius: 0 0 0 250rpx; */
@@ -47,4 +48,7 @@
   width: 60rpx;
   height: 60rpx;
   background-image: radial-gradient(60rpx at 60rpx 0, rgba(245,245,245,0) 59rpx,#F5F5F5 61rpx);
+}
+.home-nocannner-transition{
+  transform: translateY(-95rpx);
 }

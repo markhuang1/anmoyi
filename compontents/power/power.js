@@ -161,6 +161,25 @@ Component({
       let value = e.detail
       let second = value.hours * 60 * 60 + value.minutes * 60 + value.seconds 
      let  circleValue = this.data.countDownObj.chargeOrderListTime ? ((this.data.countDownObj.chargeOrderListTime - second *1000) / this.data.countDownObj.chargeOrderListTime):0
+    //  if(String(e.detail.hours).length<2){
+    //   e.detail.hours = '0'+e.detail.hours
+    //  }
+    if( e.detail.minutes == 0 && e.detail.hours && e.detail.seconds == 0){
+      let obj = this.data.countDownObj
+      obj.chargeOrderListTime = ''
+      this.setData({
+          countDownObj:obj,
+          timeData: e.detail,
+          circleValue:0
+      })
+      return
+   }
+     if(String(e.detail.minutes).length<2){
+      e.detail.minutes = '0'+e.detail.minutes
+     }
+     if(String(e.detail.seconds).length<2){
+      e.detail.seconds = '0'+e.detail.seconds
+     }
       this.setData({
         timeData: e.detail,
         circleValue:circleValue*100

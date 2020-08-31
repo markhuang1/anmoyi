@@ -60,6 +60,14 @@ component_1.VantComponent({
       type: Boolean,
       value: true,
     },
+    miniRadius:{
+      type: Number,
+      value: 6,
+    },
+    padding:{
+      type: Number,
+      value: 10,
+    }
   },
   data: {
     hoverColor: color_1.BLUE,
@@ -117,30 +125,30 @@ component_1.VantComponent({
       this.hoverColor = color;
       return Promise.resolve();
     },
-    presetCanvas: function (context, strokeStyle, beginAngle, endAngle, fill) {
+    presetCanvas: function (context, strokeStyle, beginAngle, endAngle, fill,botomStrokeWidth) {
       var _a = this.data,
         strokeWidth = _a.strokeWidth,
         lineCap = _a.lineCap,
         clockwise = _a.clockwise,
         size = _a.size;
-      var position = size / 2;
-      var radius = position - strokeWidth / 2;
-      context.setStrokeStyle(strokeStyle);
-      context.setLineWidth(strokeWidth);
-      context.setLineCap(lineCap);
-      context.beginPath();
-      context.arc(position, position, radius, beginAngle, endAngle, !clockwise);
-      context.stroke();
-      if (fill) {
-        context.setFillStyle(fill);
-        context.fill();
-      }
+        var position = size / 2;
+        var radius = position - strokeWidth / 2  - this.data.padding/2;
+        context.setStrokeStyle(strokeStyle);
+        context.setLineWidth(botomStrokeWidth?strokeWidth/2:strokeWidth);
+        context.setLineCap(lineCap);
+        context.beginPath();
+        context.arc(position, position, radius, beginAngle, endAngle, !clockwise);
+        context.stroke();
+        if (fill) {
+          context.setFillStyle(fill);
+          context.fill();
+        }
     },
     renderLayerCircle: function (context) {
       var _a = this.data,
         layerColor = _a.layerColor,
         fill = _a.fill;
-      this.presetCanvas(context, layerColor, 0, PERIMETER, fill);
+      this.presetCanvas(context, layerColor, 0, PERIMETER, fill,true);
     },
     renderHoverCircle: function (context, formatValue) {
       var clockwise = this.data.clockwise;
@@ -150,6 +158,10 @@ component_1.VantComponent({
         ? BEGIN_ANGLE + progress
         : 3 * Math.PI - (BEGIN_ANGLE + progress);
       this.presetCanvas(context, this.hoverColor, BEGIN_ANGLE, endAngle);
+      if(isNaN(endAngle)){
+        endAngle = 0
+      }
+      this.drawMiniCircle(context,endAngle,this.data.color,this.data.size / 2 - this.data.strokeWidth / 2  - this.data.padding/2,this.data.padding,this.data.miniRadius)
     },
     drawCircle: function (currentValue) {
       var _this = this;
@@ -195,6 +207,43 @@ component_1.VantComponent({
         this.interval = null;
       }
     },
+    drawMiniCircle(ctx,time,color,radius,padding,miniRadius){
+      let circleWidth = radius + padding
+      let obj = this.DegToXY(time,radius,padding)
+      ctx.beginPath()
+      ctx.strokeStyle = color
+      ctx.lineWidth=1
+      ctx.fillStyle = color;
+      ctx.globalAlpha = 0.3
+      ctx.arc(obj.x,obj.y+this.data.strokeWidth/2,miniRadius,0,2 * Math.PI,false);
+      ctx.fill();
+      ctx.beginPath()
+      ctx.globalAlpha = 1
+      ctx.fillStyle = color;
+      ctx.arc(obj.x,obj.y+this.data.strokeWidth/2,miniRadius/2,0,2 * Math.PI,false);
+      ctx.fill();
+    },
+     DegToXY(deg,radius,padding) {
+        let d = 2 * Math.PI - deg;
+        return this.respotchangeXY({
+          x: radius * Math.cos(d),
+          y: radius * Math.sin(d)
+        },radius,padding)
+      },
+    
+      //canvas坐标转化为中心坐标
+      respotchangeXY(point,radius,padding) {
+        const spotchangeX = (i) => {
+          return i + radius+padding/2
+        }
+        const spotchangeY = (i) => {
+          return radius+padding/2 - i
+        }
+        return {
+          x: spotchangeX(point.x),
+          y: spotchangeY(point.y)
+        }
+      }
   },
   mounted: function () {
     var _this = this;

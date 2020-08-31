@@ -1,0 +1,5 @@
+<!--compontents/circle/circle.wxml-->
+<view class="positionRelative flex flex-clo flex-center">
+  <canvas type="2d" id="canvas" canvas-id="canvas" style="width:150px; height: 75px;"></canvas>
+  <slot></slot>
+</view>
