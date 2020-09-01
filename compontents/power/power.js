@@ -49,6 +49,10 @@ Component({
    */
   methods: {
     setChooseOption(event){
+        if(this.data.countDownObj.chargeOrderListTime){
+          app.toast('设备运行中，无法重复购买时长')
+          return
+        }
         let res = event.currentTarget.dataset
         this.setList(res.index)
         this.setOrder()
@@ -115,10 +119,10 @@ Component({
         massageOrderListTime:this.data.countDownObj.massageOrderListTime,
       }
       if(this.data.handelType == 0){//按摩
-        obj.chargeOrderListTime = obj.chargeOrderListTime + this.data.list[this.data.chooseOption].orderTime * 60 * 1000
+        obj.chargeOrderListTime = this.data.list[this.data.chooseOption].orderTime * 60 * 1000
       }
       else{
-        obj.massageOrderListTime = obj.massageOrderListTime + this.data.list[this.data.chooseOption].orderTime * 60 * 1000
+        obj.massageOrderListTime = this.data.list[this.data.chooseOption].orderTime * 60 * 1000
       }
       
       this.setData({
@@ -164,7 +168,7 @@ Component({
     //  if(String(e.detail.hours).length<2){
     //   e.detail.hours = '0'+e.detail.hours
     //  }
-    if( e.detail.minutes == 0 && e.detail.hours && e.detail.seconds == 0){
+    if( e.detail.minutes == 0 && e.detail.hours == 0 && e.detail.seconds == 0){
       let obj = this.data.countDownObj
       obj.chargeOrderListTime = ''
       this.setData({

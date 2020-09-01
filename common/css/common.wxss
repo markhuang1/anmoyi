@@ -132,6 +132,9 @@
 .font-gray{
   color: rgb(100,100,100);
 }
+.font-333{
+  color:#333
+}
 .font-gray-102{
   color: rgb(102,102,102);
 }

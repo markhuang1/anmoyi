@@ -62,11 +62,11 @@ component_1.VantComponent({
     },
     miniRadius:{
       type: Number,
-      value: 6,
+      value: 8,
     },
     padding:{
       type: Number,
-      value: 10,
+      value: 15,
     }
   },
   data: {
@@ -215,7 +215,7 @@ component_1.VantComponent({
       ctx.lineWidth=1
       ctx.fillStyle = color;
       ctx.globalAlpha = 0.3
-      ctx.arc(obj.x,obj.y+this.data.strokeWidth/2,miniRadius,0,2 * Math.PI,false);
+      ctx.arc(obj.x,obj.y+this.data.strokeWidth/2,miniRadius*0.8,0,2 * Math.PI,false);
       ctx.fill();
       ctx.beginPath()
       ctx.globalAlpha = 1
@@ -234,10 +234,10 @@ component_1.VantComponent({
       //canvas坐标转化为中心坐标
       respotchangeXY(point,radius,padding) {
         const spotchangeX = (i) => {
-          return i + radius+padding/2
+          return i + radius+padding/2+this.data.strokeWidth/4
         }
         const spotchangeY = (i) => {
-          return radius+padding/2 - i
+          return radius+padding/2-this.data.strokeWidth/4 - i
         }
         return {
           x: spotchangeX(point.x),

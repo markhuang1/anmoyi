@@ -1,6 +1,6 @@
 /* pages/home/home.wxss */
 .home-sacanner{
-  padding: 26rpx 15rpx;
+  padding: 26rpx 20rpx;
 }
 .scanner-padding{
   padding: 20rpx 10rpx;
