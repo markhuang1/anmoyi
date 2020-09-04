@@ -111,6 +111,10 @@ Page({
         if(res.code == 0){
           let deviceInfo = res.data
           deviceInfo.stateText = app.getEnum.getDeviceState(deviceInfo.deviceStatus)
+          if(!deviceInfo.massagePackageList.length){
+            app.toast("当前设备暂无套餐信息")
+            return
+          }
           this.setData({
             deviceInfo
           })

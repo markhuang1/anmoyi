@@ -20,6 +20,10 @@ Component({
       deviceId:{
         type:String,
         value: ""
+      },
+      packageList:{//套餐列表
+        type:Array,
+        value: []
       }
   },
 
@@ -79,9 +83,10 @@ Component({
       })
       setTimeout(()=>{
         let data = {
-          userId:6666,//用户id
+          userId:666,//用户ID
+          packageId:this.data.list[this.data.chooseOption].id,//套餐id
           deviceId:this.properties.deviceId,//设备id
-          orderCode:this.data.list[this.data.chooseOption].orderCode,//选择的套餐类型
+          orderCode:this.data.list[this.data.chooseOption].packageCode,//选择的套餐类型
         }
         this.setData({
           loadingOrder:true
@@ -119,10 +124,10 @@ Component({
         massageOrderListTime:this.data.countDownObj.massageOrderListTime,
       }
       if(this.data.handelType == 0){//按摩
-        obj.chargeOrderListTime = this.data.list[this.data.chooseOption].orderTime * 60 * 1000
+        obj.chargeOrderListTime = this.data.list[this.data.chooseOption].packageDuration * 60 * 1000
       }
       else{
-        obj.massageOrderListTime = this.data.list[this.data.chooseOption].orderTime * 60 * 1000
+        obj.massageOrderListTime = this.data.list[this.data.chooseOption].packageDuration * 60 * 1000
       }
       
       this.setData({
@@ -130,16 +135,13 @@ Component({
       })
     },
     init(){//获取订单配置列表
-      app.request("orderType","GET")
-      .then(res=>{
-        if(res.code == 0){
-          this.data.listObj = res.data
-          this.setList(0)
-        }
-        else{
-          app.toast("订单列表加载失败")
-        }
-      })
+      if(this.properties.packageList && this.properties.packageList.length){
+         this.data.listObj = {massageOrderList:this.properties.packageList}
+         this.setList(0)
+      }
+      else{
+        app.toast("订单列表加载失败")
+      }
     },
     setList(chooseOption){
       if(!this.data.listObj){

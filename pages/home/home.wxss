@@ -1,4 +1,7 @@
 /* pages/home/home.wxss */
+page{
+  background-color: #F5F5F5;
+}
 .home-sacanner{
   padding: 26rpx 20rpx;
 }

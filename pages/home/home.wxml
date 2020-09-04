@@ -1,5 +1,5 @@
 <!--pages/home/home.wxml-->
-<view class="home full-height full-width scroll-y bg-gray-245">
+<view class="home full-width scroll-y bg-gray-245">
 
     <!-- 轮播图 -->
     <view class="scroll-hidden">
@@ -80,7 +80,7 @@
 
               <!-- 显示操作列表 -->
               <view class="home-sacanner common-border-raduis common-box-sizing" wx:if="{{deviceInfo}}">
-                <power deviceId="{{deviceInfo.id}}"></power>
+                <power deviceId="{{deviceInfo.id}}" packageList="{{deviceInfo.massagePackageList}}"></power>
               </view>
           </view>
         </view>
